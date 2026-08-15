@@ -30,6 +30,11 @@ export function EducationTimeline() {
                 Skills: {entry.skills.join(', ')}
               </p>
             )}
+            {entry.relevantCoursework && entry.relevantCoursework.length > 0 && (
+              <p className="mt-1 text-xs text-neutral-500">
+                Relevant coursework: {entry.relevantCoursework.join(', ')}
+              </p>
+            )}
           </div>
         ))}
       </div>

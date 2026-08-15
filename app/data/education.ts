@@ -1,11 +1,12 @@
 export interface EducationEntry {
   institution: string;
   degree: string;
-  startDate: string;   // 'YYYY-MM'
-  endDate?: string;     // omit if ongoing
+  startDate: string;
+  endDate?: string;
   status: 'completed' | 'in-progress';
   skills?: string[];
-  logo?: string;        // path in /public, optional
+  relevantCoursework?: string[];
+  logo?: string;
 }
 
 export const education: EducationEntry[] = [
@@ -17,11 +18,15 @@ export const education: EducationEntry[] = [
     status: 'in-progress',
   },
   {
-  institution: 'Maastricht University School of Business and Economics',
-  degree: "Bachelor's degree, Business Analytics",
-  startDate: '2023-09',
-  endDate: '2026-07',
-  status: 'completed',
-  skills: ['SQL', 'Microsoft Excel', 'Python', 'R', 'Statistical Data Analysis'],
+    institution: 'Maastricht University School of Business and Economics',
+    degree: "Bachelor's degree, Business Analytics",
+    startDate: '2023-09',
+    endDate: '2026-07',
+    status: 'completed',
+    skills: ['SQL', 'Microsoft Excel', 'Python', 'R', 'Statistical Data Analysis'],
+    relevantCoursework: [
+      'Data Engineering and Data Governance',
+      'An Analytical Approach to Separating Fact from Fiction',
+    ],
   },
 ];
