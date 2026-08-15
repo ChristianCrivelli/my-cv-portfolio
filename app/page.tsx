@@ -1,21 +1,42 @@
-import { BlogPosts } from 'app/components/posts'
+import Link from 'next/link';
+import { projects } from './data/projects';
+import { ProjectCard } from './components/project-card';
+import { SkillsRadar } from './components/skills-radar';
+import { EducationTimeline } from './components/education-timeline';
 
 export default function Page() {
+  const featured = projects.filter((p) => p.featured);
+
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
-      <div className="my-8">
-        <BlogPosts />
-      </div>
-    </section>
-  )
+    <div className="space-y-16">
+      {/* Hero */}
+      <section>
+        <h1 className="text-3xl font-semibold">Christian Crivelli</h1>
+        <p className="mt-2 text-neutral-600">
+          Business Analytics Student | Systems Architect | Data for Good
+        </p>
+      </section>
+
+      {/* Featured Projects */}
+      <section>
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-xl font-medium">Featured Projects</h2>
+          <Link href="/projects" className="text-sm underline">
+            View all →
+          </Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {featured.map((p) => (
+            <ProjectCard key={p.slug} project={p} />
+          ))}
+        </div>
+      </section>
+
+      {/* Skills */}
+      <SkillsRadar />
+
+      {/* Education */}
+      <EducationTimeline />
+    </div>
+  );
 }

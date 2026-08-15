@@ -1,17 +1,18 @@
-import { getBlogPosts } from 'app/blog/utils'
+import { MetadataRoute } from 'next';
+import { projects } from './data/projects';
 
-export const baseUrl = 'https://portfolio-blog-starter.vercel.app'
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://yourdomain.com'; // replace with your actual domain
 
-export default async function sitemap() {
-  let blogs = getBlogPosts().map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.metadata.publishedAt,
-  }))
+  const projectRoutes = projects.map((project) => ({
+    url: `${baseUrl}/projects/${project.slug}`,
+    lastModified: new Date(),
+  }));
 
-  let routes = ['', '/blog'].map((route) => ({
+  const staticRoutes = ['', '/projects'].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
-  }))
+    lastModified: new Date(),
+  }));
 
-  return [...routes, ...blogs]
+  return [...staticRoutes, ...projectRoutes];
 }
