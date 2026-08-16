@@ -3,6 +3,7 @@ import { projects } from './data/projects';
 import { ProjectCard } from './components/project-card';
 import { SkillsRadar } from './components/skills-radar';
 import { EducationTimeline } from './components/education-timeline';
+import { GithubActivity } from './components/github-activity';
 
 export default function Page() {
   const featured = projects.filter((p) => p.featured);
@@ -15,6 +16,9 @@ export default function Page() {
         <p className="mt-2 text-neutral-600">
           Business Analytics Student | Systems Architect | Data for Good
         </p>
+        <span className="mt-3 inline-block rounded-full bg-green-100 px-3 py-1 text-sm text-green-800">
+          ● Ready to work starting Summer 2027!
+        </span>
       </section>
 
       {/* Featured Projects */}
@@ -32,11 +36,17 @@ export default function Page() {
         </div>
       </section>
 
+      {/* GitHub Activity */}
+      <GithubActivity username="ChristianCrivelli" />
+
       {/* Skills */}
       <SkillsRadar />
 
       {/* Education */}
       <EducationTimeline />
+
+      {/* Languages */}  
+      <Languages />
     </div>
   );
 }

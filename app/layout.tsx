@@ -7,19 +7,20 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import { getPersonStructuredData } from './data/structured-data'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Christian Crivelli', // TODO: replace starter default
+    template: '%s | Christian Crivelli',
   },
-  description: 'This is my portfolio.',
+  description: 'Business Analytics student portfolio.', // TODO: refine
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Christian Crivelli',
+    description: 'Business Analytics student portfolio.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Christian Crivelli',
     locale: 'en_US',
     type: 'website',
   },
@@ -43,6 +44,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const structuredData = getPersonStructuredData()
+
   return (
     <html
       lang="en"
@@ -52,6 +55,12 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
