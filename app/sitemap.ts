@@ -1,9 +1,9 @@
 import { MetadataRoute } from 'next';
 import { projects } from './data/projects';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://yourdomain.com'; // replace with your actual domain
+export const baseUrl = 'https://yourdomain.com'; // TODO: replace once deployed
 
+export default function sitemap(): MetadataRoute.Sitemap {
   const projectRoutes = projects.map((project) => ({
     url: `${baseUrl}/projects/${project.slug}`,
     lastModified: new Date(),
