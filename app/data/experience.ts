@@ -18,6 +18,6 @@ export const experience: ExperienceEntry[] = [
     highlights: [
       'Placeholder — replace with a real responsibility, framed around a transferable skill (reliability, pace, accuracy, customer communication).',
       'Placeholder — second bullet.',
-    ],
+    ],feat: restore experience timeline with data file
   },
 ];

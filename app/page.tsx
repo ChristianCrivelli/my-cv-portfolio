@@ -4,6 +4,7 @@ import { ProjectCard } from './components/project-card';
 import { SkillsRadar } from './components/skills-radar';
 import { EducationTimeline } from './components/education-timeline';
 import { GithubActivity } from './components/github-activity';
+import { ExperienceTimeline } from './components/experience-timeline';
 
 export default function Page() {
   const featured = projects.filter((p) => p.featured);
