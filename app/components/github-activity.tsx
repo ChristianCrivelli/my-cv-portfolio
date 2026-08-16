@@ -7,7 +7,7 @@ export function GithubActivity({ username }: { username: string }) {
         alt={`${username}'s GitHub contribution graph`}
         className="w-full rounded border"
       />
-      
+      <a
         href={`https://github.com/${username}`}
         target="_blank"
         className="mt-2 inline-block text-sm underline"
