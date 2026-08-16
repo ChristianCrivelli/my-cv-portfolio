@@ -39,11 +39,14 @@ export default function Page() {
       {/* GitHub Activity */}
       <GithubActivity username="ChristianCrivelli" />
 
-      {/* Skills */}
-      <SkillsRadar />
+      {/* Work Experience */}
+      <ExperienceTimeline />
 
       {/* Education */}
       <EducationTimeline />
+
+      {/* Skills */}
+      <SkillsRadar />
 
       {/* Languages */}  
       <Languages />

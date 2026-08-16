@@ -9,13 +9,13 @@ function formatRange(start: string, end?: string) {
 export function ExperienceTimeline() {
   return (
     <section>
-      <h2 className="mb-6 text-xl font-medium">Work Experience</h2>
+      <h2 className="mb-6 text-xl font-medium">Experience</h2>
       <div className="space-y-8">
         {experience.map((entry, i) => (
           <div key={i} className="border-l-2 pl-4">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
               <h3 className="font-medium">
-                {entry.role} · {entry.company}
+                {entry.role} · {entry.employer}
               </h3>
               <span className="text-sm text-neutral-500">
                 {formatRange(entry.startDate, entry.endDate)}
