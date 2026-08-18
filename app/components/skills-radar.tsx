@@ -44,11 +44,22 @@ export function SkillsRadar() {
     return points;
   });
 
+  // Text alternative for screen readers — the SVG shape itself conveys the
+  // same info visually but isn't parseable by assistive tech.
+  const summary = skills
+    .map((s) => `${s.name} ${s.proficiency} out of ${MAX_SCORE}`)
+    .join(', ');
+
   return (
     <section>
       <h2 className="mb-4 text-xl font-medium">Skills</h2>
+      <p className="sr-only">Skill proficiency: {summary}.</p>
       <div className="flex justify-center">
-        <svg width={SIZE} height={SIZE + 20} viewBox={`0 0 ${SIZE} ${SIZE + 20}`}>
+        <svg
+          aria-hidden="true"
+          className="h-auto w-full max-w-[300px]"
+          viewBox={`0 0 ${SIZE} ${SIZE + 20}`}
+        >
           {/* grid rings */}
           {rings.map((points, i) => (
             <polygon

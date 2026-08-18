@@ -6,9 +6,11 @@ import { EducationTimeline } from './components/education-timeline';
 import { GithubActivity } from './components/github-activity';
 import { ExperienceTimeline } from './components/experience-timeline';
 import { Languages } from './components/languages';
+import { getAvailabilityBadge } from './lib/availability';
 
 export default function Page() {
   const featured = projects.filter((p) => p.featured);
+  const badge = getAvailabilityBadge();
 
   return (
     <div className="space-y-16">
@@ -18,8 +20,10 @@ export default function Page() {
         <p className="mt-2 text-neutral-600">
           Business Analytics Student | Systems Architect | Data for Good
         </p>
-        <span className="mt-3 inline-block rounded-full bg-green-100 px-3 py-1 text-sm text-green-800">
-          ● Ready to work starting Summer 2027!
+        <span
+          className={`mt-3 inline-block rounded-full px-3 py-1 text-sm ${badge.className}`}
+        >
+          ● {badge.label}
         </span>
       </section>
 

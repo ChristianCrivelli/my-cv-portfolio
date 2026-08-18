@@ -20,13 +20,23 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <p className="mt-2 text-neutral-600">{project.description}</p>
       <div className="mt-4 flex gap-4">
         {project.liveUrl && (
-          <a href={project.liveUrl} target="_blank" className="underline">
-            Live demo
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Live demo<span className="sr-only"> (opens in a new tab)</span>
           </a>
         )}
         {project.repoUrl && (
-          <a href={project.repoUrl} target="_blank" className="underline">
-            Repository
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Repository<span className="sr-only"> (opens in a new tab)</span>
           </a>
         )}
       </div>
