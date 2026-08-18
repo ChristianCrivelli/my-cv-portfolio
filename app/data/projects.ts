@@ -116,4 +116,15 @@ export const projects: Project[] = [
       'A utility that pulls vocabulary entries from a Notion database, cleans and enriches them with definitions, and stores them in a local database for flashcard-style review.',
     repoUrl: 'https://github.com/ChristianCrivelli/flashcards',
   },
+  {
+    slug: 'portfolio-site',
+    title: 'Personal CV & Developer Portfolio',
+    type: 'webapp',
+    status: 'live',
+    oneLiner: 'This site — a Next.js portfolio centralizing my projects, skills, and background into one interactive showcase.',
+    description:
+      'A responsive personal portfolio built with Next.js and Tailwind, moving away from a static resume toward an interactive, continuously updated showcase. Features live GitHub activity, a skills radar chart, education/experience timelines, dynamic OG images, and JSON-LD structured data for discoverability.',
+    liveUrl: 'https://my-cv-portfolio-alpha.vercel.app/',
+    repoUrl: 'https://github.com/ChristianCrivelli/my-cv-portfolio',
+  },
 ];

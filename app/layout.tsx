@@ -12,13 +12,15 @@ import { getPersonStructuredData } from './data/structured-data'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Christian Crivelli', // TODO: replace starter default
+    default: 'Christian Crivelli — Business Analytics & Data Science',
     template: '%s | Christian Crivelli',
   },
-  description: 'Business Analytics student portfolio.', // TODO: refine
+  description:
+    'Business Analytics graduate and incoming BI & Smart Services MSc student building data-for-good projects in sports, civic data, and demographics.',
   openGraph: {
-    title: 'Christian Crivelli',
-    description: 'Business Analytics student portfolio.',
+    title: 'Christian Crivelli — Business Analytics & Data Science',
+    description:
+      'Business Analytics graduate and incoming MSc student in Business Intelligence & Smart Services, building data-driven projects in sports analytics, civic data, and demographic research.',
     url: baseUrl,
     siteName: 'Christian Crivelli',
     locale: 'en_US',
