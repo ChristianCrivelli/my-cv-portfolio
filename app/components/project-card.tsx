@@ -15,10 +15,12 @@ const statusLabel: Record<Project['status'], string> = {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link
-      href={`/projects/${project.slug}`}
-      className="block rounded-lg border p-4 transition hover:shadow-md"
-    >
+    <div className="relative rounded-lg border p-4 transition hover:shadow-md">
+      <Link
+        href={`/projects/${project.slug}`}
+        className="absolute inset-0 rounded-lg"
+        aria-label={project.title}
+      />
       <div className="flex items-center justify-between">
         <h3 className="font-medium">{project.title}</h3>
         <span className={`rounded px-2 py-0.5 text-xs ${statusStyles[project.status]}`}>
@@ -26,10 +28,30 @@ export function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
       <p className="mt-2 text-sm text-neutral-600">{project.oneLiner}</p>
-      <div className="mt-3 flex gap-3 text-sm">
-        {project.liveUrl && <span className="underline">Live demo</span>}
-        {project.repoUrl && <span className="underline">Code</span>}
+      <div className="relative z-10 mt-3 flex gap-3 text-sm">
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Live demo
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        )}
+        {project.repoUrl && (
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Code
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        )}
       </div>
-    </Link>
+    </div>
   );
 }
