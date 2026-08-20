@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
-import { getPersonStructuredData } from './data/structured-data'
+import { getPersonStructuredData, getProjectsStructuredData } from './data/structured-data'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -25,6 +25,21 @@ export const metadata: Metadata = {
     siteName: 'Christian Crivelli',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og',
+        width: 1200,
+        height: 630,
+        alt: 'Christian Crivelli — Business Analytics & Data Science',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Christian Crivelli — Business Analytics & Data Science',
+    description:
+      'Business Analytics graduate and incoming MSc student in Business Intelligence & Smart Services, building data-driven projects in sports analytics, civic data, and demographic research.',
+    images: ['/og'],
   },
   robots: {
     index: true,
@@ -46,7 +61,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const structuredData = getPersonStructuredData()
+  const personStructuredData = getPersonStructuredData()
+  const projectsStructuredData = getProjectsStructuredData()
 
   return (
     <html
@@ -60,7 +76,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsStructuredData) }}
         />
       </head>
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
