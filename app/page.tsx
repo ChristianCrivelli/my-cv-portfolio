@@ -34,9 +34,9 @@ export default function Page() {
           data meets real-world problems — civic governance, public health,
           sports, and beyond — and outside of coursework I sit on the board
           of Mukti Sanctuary, an animal rescue non-profit in Lisbon.
-          I&apos;m looking for opportunities like CERN or Vulcanus in Japan to
-          grow my skills while traveling, and hopefully make a positive
-          contribution along the way.
+          I&apos;m looking for opportunities to grow my skills while
+          discovering new places, and hopefully make a positive contribution
+          along the way.
         </p>
       </section>
 

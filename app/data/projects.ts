@@ -10,6 +10,7 @@ export interface Project {
   description: string;     // longer text for the deep-dive page (markdown-friendly string)
   liveUrl?: string;
   repoUrl?: string;
+  extraRepos?: { label: string; url: string }[]; // additional related repos (e.g. a separate backend/data repo)
   image?: string;          // path in /public
   featured?: boolean;      // show on homepage
   // thesis-only fields
@@ -39,9 +40,12 @@ export const projects: Project[] = [
     status: 'in-progress', // beta live
     oneLiner: 'A music recommender that suggests albums based on audio feature similarity.',
     description:
-      'A Supabase-backed recommendation engine that computes cosine similarity across a feature matrix of albums, wrapped in a FastAPI backend and a lightweight static frontend styled like a library card catalog. A public beta is live, with a separate private repo handling data ingestion and a public repo serving the read-only app.',
+      'A Supabase-backed recommendation engine that computes cosine similarity across a feature matrix of albums, wrapped in a FastAPI backend and a lightweight static frontend styled like a library card catalog. A public beta is live, split across two repos: one handling data ingestion and the recommendation engine, the other serving the read-only public app.',
     liveUrl: 'https://album-recommendations-public.vercel.app/',
     repoUrl: 'https://github.com/ChristianCrivelli/Album-Recommendations-Public',
+    extraRepos: [
+      { label: 'Data & Recommender Engine', url: 'https://github.com/ChristianCrivelli/Album-Recommendations' },
+    ],
     featured: true,
   },
   {

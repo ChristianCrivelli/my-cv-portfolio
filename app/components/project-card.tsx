@@ -53,6 +53,18 @@ export function ProjectCard({ project }: { project: Project }) {
             <span className="sr-only"> (opens in a new tab)</span>
           </a>
         )}
+        {project.extraRepos?.map((repo) => (
+          <a
+            key={repo.url}
+            href={repo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            {repo.label}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        ))}
       </div>
     </div>
   );
