@@ -6,7 +6,7 @@ import { EducationTimeline } from './components/education-timeline';
 import { GithubActivity } from './components/github-activity';
 import { ExperienceTimeline } from './components/experience-timeline';
 import { LeadershipTimeline } from './components/leadership-timeline';
-import { JourneyMap } from './components/journey-map';
+import { JourneyMap } from './components/journey-map-loader';
 import { Languages } from './components/languages';
 import { getAvailabilityBadge } from './lib/availability';
 
