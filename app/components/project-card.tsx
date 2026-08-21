@@ -4,12 +4,14 @@ import { Project } from '../data/projects';
 const statusStyles: Record<Project['status'], string> = {
   live: 'bg-green-100 text-green-800',
   'in-progress': 'bg-amber-100 text-amber-800',
+  completed: 'bg-blue-100 text-blue-800',
   archived: 'bg-neutral-100 text-neutral-500',
 };
 
 const statusLabel: Record<Project['status'], string> = {
   live: 'Live',
   'in-progress': 'In Progress',
+  completed: 'Completed',
   archived: 'Archived',
 };
 

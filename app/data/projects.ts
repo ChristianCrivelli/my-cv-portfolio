@@ -1,4 +1,4 @@
-export type ProjectStatus = 'live' | 'in-progress' | 'archived';
+export type ProjectStatus = 'live' | 'in-progress' | 'completed' | 'archived';
 export type ProjectType = 'tool' | 'webapp' | 'research' | 'api' | 'thesis';
 
 export interface Project {
@@ -20,13 +20,16 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'thesis',
-    title: 'Your Thesis Title',
+    title: 'Finding the Balance Between Efficiency and Green',
     type: 'thesis',
-    status: 'in-progress',
-    oneLiner: 'One-sentence summary of the thesis.',
-    description: 'Longer write-up goes here.',
-    abstract: 'Two-sentence non-technical abstract for recruiters.',
-    pdfPath: '/thesis.pdf',
+    status: 'completed',
+    oneLiner:
+      "A Bachelor's thesis quantifying the exact trade-off between travel time and CO2 emissions in time-sensitive B2B logistics.",
+    description:
+      'A multi-objective optimization thesis for Maastricht University\'s School of Business and Economics, supervised by Dr. Burak Can, tackling the operational trade-off between time-based efficiency and environmental sustainability in time-sensitive B2B logistics. Built a white-box simulation framework — combining the ISO 23795 standard, WLTP drive-cycle classification, and a Random Forest classifier — over a granular GPS dataset of 19 trips across Europe and Aruba, then ran a segment-based physics engine across 100 driver profiles to trace the Pareto frontier between speed and emissions. The results identify an eco-driving "frontier knee" (α ∈ [0.4, 0.6]) as the optimal trade-off: a 7.74% emissions reduction unladen, rising to 9.36% fully loaded and up to 16.51% in congested urban corridors, all while keeping fleets within contractual SLA windows — directly relevant as EU ETS-2 regulations put a price on freight carbon.',
+    abstract:
+      'Investigates how logistics companies can cut delivery-fleet carbon emissions without missing service deadlines, using real GPS trip data and a physics-based driving simulation. Finds an eco-driving "sweet spot" that cuts emissions by up to 16.5% on congested urban routes while still meeting delivery-time commitments.',
+    pdfPath: '/Christian%20Crivelli%20Thesis.pdf',
     featured: true,
   },
   {
