@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -21,6 +22,17 @@ export function JourneyMap() {
   return (
     <section>
       <h2 className="mb-4 text-xl font-medium">Places I&apos;ve studied, lived, and worked</h2>
+      <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+        Five places that trace my life so far: childhood in Mindelo and Matosinhos, my first year
+        of university in Lanaken, my degree in Maastricht, and an exchange semester in Istanbul.
+        They&apos;re also the exact five cities behind my{' '}
+        <Link href="/projects/city-walkability" className="underline">
+          City Walkability project
+        </Link>
+        {' '}— studying their pedestrian networks was my way of taking a closer look at places
+        that shaped me. I&apos;d love to keep adding more pins to this map as life adds more
+        places.
+      </p>
       <div className="h-[420px] w-full overflow-hidden rounded-lg border">
         <MapContainer
           center={[46, 12]}

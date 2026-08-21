@@ -28,7 +28,7 @@ export default function Page() {
           ● {badge.label}
         </span>
         <p className="mt-4 max-w-2xl text-neutral-700">
-          I&apos;m a Portugal-born Italian, currently completing a Master&apos;s in
+          I&apos;m a Portugal-born Italo-Brazilian, currently completing a Master&apos;s in
           Business Intelligence &amp; Smart Services at Maastricht University
           after a Bachelor&apos;s in Business Analytics. I like working where
           data meets real-world problems — civic governance, public health,
