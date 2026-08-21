@@ -48,7 +48,7 @@ export const projects: Project[] = [
     status: 'in-progress',
     oneLiner: 'An analysis of how public health and cultural indicators relate to stock performance.',
     description:
-      'A Python-based research project examining whether population health metrics (e.g. obesity trends) show a measurable relationship with equity market performance.', //[TODO: add date range and number of data points once analysis is finalized]
+      'A Python-based research project examining whether population health metrics (e.g. obesity trends) show a measurable relationship with equity market performance, correlating 45 years of S&P 500 total returns (1980–2024) against national obesity trends across six countries: Australia, India, Japan, Singapore, the UK, and the US.',
     repoUrl: 'https://github.com/ChristianCrivelli/stock_culture',
   },
   {
@@ -79,8 +79,8 @@ export const projects: Project[] = [
     status: 'in-progress',
     oneLiner: 'Analyzes pedestrian infrastructure networks to score urban walkability.',
     description:
-      'A network-analysis project that models pedestrian nodes across a city to evaluate and compare walkability.',
-    repoUrl: 'https://github.com/ChristianCrivelli/city_walkability', //[TODO: add number of nodes/edges analyzed and city scope]
+      'A network-analysis project that models pedestrian nodes across a city to evaluate and compare walkability. Phase 1 (data pipeline) is complete across five study cities — Maastricht, Matosinhos, Sabancı University (Istanbul), Lanaken, and Mindelo — covering roughly 32,000 pedestrian nodes, 87,000 edges, and 5,150 km of mapped network, enriched with elevation and terrain-grade data.',
+    repoUrl: 'https://github.com/ChristianCrivelli/city_walkability',
   },
   {
     slug: '2vs3',
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     oneLiner:
       'Treats the basketball court as a portfolio to find the optimal risk/reward frontier for shot selection.',
     description:
-      'A mathematical optimization project inspired by the "Moreyball" analytics revolution, which frames shot selection as a multi-objective problem: maximizing expected value while accounting for variance. By treating the court as an asset portfolio, the model calculates the exact break-even frontier where a team cannot increase expected point return without increasing the risk of missing the shot — directly applying Pareto optimization to sports analytics.', //[TODO: add season(s)/dataset size once finalized, e.g. "trained on N shots across M NBA seasons"]
+      'A mathematical optimization project inspired by the "Moreyball" analytics revolution, which frames shot selection as a multi-objective problem: maximizing expected value while accounting for variance. By treating the court as an asset portfolio, the model calculates the exact break-even frontier where a team cannot increase expected point return without increasing the risk of missing the shot — directly applying Pareto optimization to sports analytics. Trained on 218,701 logged shots from the 2023–24 NBA season.',
     repoUrl: 'https://github.com/ChristianCrivelli/2vs3',
     featured: true,
   },

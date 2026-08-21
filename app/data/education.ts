@@ -12,7 +12,7 @@ export interface EducationEntry {
 export const education: EducationEntry[] = [
   {
     institution: 'Maastricht University School of Business and Economics',
-    degree: 'Business Intelligence and Smart Services',
+    degree: "Master's degree, Business Intelligence and Smart Services",
     startDate: '2026-08',
     endDate: '2027-07',
     status: 'in-progress',

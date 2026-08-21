@@ -5,6 +5,8 @@ import { SkillsRadar } from './components/skills-radar';
 import { EducationTimeline } from './components/education-timeline';
 import { GithubActivity } from './components/github-activity';
 import { ExperienceTimeline } from './components/experience-timeline';
+import { LeadershipTimeline } from './components/leadership-timeline';
+import { JourneyMap } from './components/journey-map';
 import { Languages } from './components/languages';
 import { getAvailabilityBadge } from './lib/availability';
 
@@ -25,6 +27,17 @@ export default function Page() {
         >
           ● {badge.label}
         </span>
+        <p className="mt-4 max-w-2xl text-neutral-700">
+          I&apos;m a Portugal-born Italian, currently completing a Master&apos;s in
+          Business Intelligence &amp; Smart Services at Maastricht University
+          after a Bachelor&apos;s in Business Analytics. I like working where
+          data meets real-world problems — civic governance, public health,
+          sports, and beyond — and outside of coursework I sit on the board
+          of Mukti Sanctuary, an animal rescue non-profit in Lisbon.
+          I&apos;m looking for opportunities like CERN or Vulcanus in Japan to
+          grow my skills while traveling, and hopefully make a positive
+          contribution along the way.
+        </p>
       </section>
 
       {/* Featured Projects */}
@@ -48,6 +61,9 @@ export default function Page() {
       {/* Work Experience */}
       <ExperienceTimeline />
 
+      {/* Leadership */}
+      <LeadershipTimeline />
+
       {/* Education */}
       <EducationTimeline />
 
@@ -56,6 +72,9 @@ export default function Page() {
 
       {/* Languages */}
       <Languages />
+
+      {/* Journey Map */}
+      <JourneyMap />
     </div>
   );
 }

@@ -4,20 +4,40 @@ export interface ExperienceEntry {
   startDate: string; // 'YYYY-MM'
   endDate?: string;   // omit if current
   location?: string;
-  highlights: string[]; // TODO: replace placeholders with real responsibilities/impact
+  highlights: string[];
 }
 
 export const experience: ExperienceEntry[] = [
   {
-    // TODO: fill in real employer, dates, role, and highlights
-    employer: 'Employer Name',
-    role: 'Role Title',
-    startDate: '2023-01',
-    endDate: '2023-12',
-    location: 'City, Country',
+    employer: 'Brasserie Monopole',
+    role: 'Waiter',
+    startDate: '2024-04',
+    endDate: '2025-01',
+    location: 'Maastricht, Netherlands',
     highlights: [
-      'Placeholder — replace with a real responsibility, framed around a transferable skill (reliability, pace, accuracy, customer communication).',
-      'Placeholder — second bullet.',
+      'Served guests at a busy restaurant in central Maastricht, handling high-volume service with pace and accuracy.',
+      'Maintained customer communication and reliability standards while balancing a full academic course load.',
+    ],
+  },
+  {
+    employer: "Dunkin' Donuts",
+    role: 'Barista',
+    startDate: '2024-12',
+    endDate: '2025-07',
+    location: 'Maastricht, Netherlands',
+    highlights: [
+      'Prepared and served drinks and food during high-traffic shifts, prioritizing speed and order accuracy.',
+      'Handled point-of-sale and customer-facing responsibilities independently.',
+    ],
+  },
+  {
+    employer: 'The Social Hub Maastricht',
+    role: 'Waiter',
+    startDate: '2026-02',
+    location: 'Maastricht, Netherlands',
+    highlights: [
+      'Providing dining and event service while completing the Business Intelligence & Smart Services Master\'s.',
+      'Maintaining reliability and customer-facing service skills alongside a full-time academic schedule.',
     ],
   },
 ];
