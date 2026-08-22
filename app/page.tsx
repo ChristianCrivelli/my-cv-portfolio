@@ -17,27 +17,46 @@ export default function Page() {
   return (
     <div className="space-y-16">
       {/* Hero */}
-      <section>
-        <h1 className="text-3xl font-semibold">Christian Crivelli</h1>
-        <p className="mt-2 text-neutral-600">
-          Business Analytics Student | Systems Architect | Data for Good
-        </p>
-        <span
-          className={`mt-3 inline-block rounded-full px-3 py-1 text-sm ${badge.className}`}
-        >
-          ● {badge.label}
-        </span>
-        <p className="mt-4 max-w-2xl text-neutral-700">
-          I&apos;m a Portugal-born Italo-Brazilian, currently completing a Master&apos;s in
-          Business Intelligence &amp; Smart Services at Maastricht University
-          after a Bachelor&apos;s in Business Analytics. I like working where
-          data meets real-world problems — civic governance, public health,
-          sports, and beyond — and outside of coursework I sit on the board
-          of Mukti Sanctuary, an animal rescue non-profit in Lisbon.
-          I&apos;m looking for opportunities to grow my skills while
-          discovering new places, and hopefully make a positive contribution
-          along the way.
-        </p>
+      <section className="hero-surface -mx-2 rounded-3xl px-6 py-12 sm:-mx-4 sm:px-10 sm:py-14 md:mx-0">
+        <div className="hero-glow-a" />
+        <div className="hero-glow-b" />
+        <div className="hero-grain" />
+        <div className="relative grid gap-10 sm:grid-cols-[220px_minmax(0,1fr)] sm:items-start sm:gap-14">
+          <div className="animate-rise-in">
+            <div className="logo-mark mb-5" />
+            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+              Christian
+              <br />
+              Crivelli
+            </h1>
+            <p className="mt-2 text-sm font-medium leading-relaxed" style={{ color: 'var(--ink-muted)' }}>
+              Business Analytics Student
+              <br />
+              Systems Architect
+              <br />
+              Data for Good
+            </p>
+            <span
+              className={`status-badge mt-5 text-sm ${badge.className}`}
+            >
+              ● {badge.label}
+            </span>
+          </div>
+          <p
+            className="animate-rise-in-delay max-w-2xl text-[17px] leading-[1.7]"
+            style={{ color: 'var(--ink-muted)' }}
+          >
+            I&apos;m a Portugal-born Italo-Brazilian, currently completing a Master&apos;s in
+            Business Intelligence &amp; Smart Services at Maastricht University
+            after a Bachelor&apos;s in Business Analytics. I like working where
+            data meets real-world problems — civic governance, public health,
+            sports, and beyond — and outside of coursework I sit on the board
+            of Mukti Sanctuary, an animal rescue non-profit in Lisbon.
+            I&apos;m looking for opportunities to grow my skills while
+            discovering new places, and hopefully make a positive contribution
+            along the way.
+          </p>
+        </div>
       </section>
 
       {/* Featured Projects */}

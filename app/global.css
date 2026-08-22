@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 ::selection {
-  background-color: #47a3f3;
+  background-color: var(--accent);
   color: #fefefe;
 }
 
@@ -15,6 +15,30 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+
+  /* Design system tokens — see issue #23 (light values) */
+  --accent: #2dd4a7;
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --ink: #1c1e21;
+  --ink-muted: #6b7075;
+  --ink-faint: #8b8f94;
+  --border-soft: rgba(0, 0, 0, 0.07);
+  --glow-strong: color-mix(in srgb, var(--accent) 20%, transparent);
+  --glow-soft: color-mix(in srgb, var(--accent) 10%, transparent);
+  --card-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 10px 24px rgba(20, 20, 25, 0.06);
+  --card-shadow-hover: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 18px 32px rgba(20, 20, 25, 0.09);
+  --logo-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04) inset, 0 8px 20px color-mix(in srgb, var(--accent) 30%, transparent);
+  --grain-opacity: 0;
+
+  --status-live-ink: #0f6fa8;
+  --status-live-bg: #dff1fb;
+  --status-progress-ink: #9a6b1f;
+  --status-progress-bg: #fbeed7;
+  --status-completed-ink: color-mix(in srgb, var(--accent) 75%, black);
+  --status-completed-bg: color-mix(in srgb, var(--accent) 16%, white);
+  --status-archived-ink: #6b7075;
+  --status-archived-bg: rgba(0, 0, 0, 0.05);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,9 +47,143 @@
     --sh-identifier: white;
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
+
+    /* Design system tokens (dark values) */
+    --bg: #0e1013;
+    --surface: #15171b;
+    --ink: #eef1f3;
+    --ink-muted: #9aa4ab;
+    --ink-faint: #7d868c;
+    --border-soft: rgba(255, 255, 255, 0.07);
+    --glow-strong: color-mix(in srgb, var(--accent) 30%, transparent);
+    --glow-soft: color-mix(in srgb, var(--accent) 14%, transparent);
+    --card-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 28px rgba(0, 0, 0, 0.35);
+    --card-shadow-hover: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 18px 36px rgba(0, 0, 0, 0.45);
+    --logo-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset, 0 8px 24px color-mix(in srgb, var(--accent) 45%, transparent);
+    --grain-opacity: 0.05;
+
+    --status-live-ink: #38bdf8;
+    --status-live-bg: rgba(56, 189, 248, 0.14);
+    --status-progress-ink: #e0b64a;
+    --status-progress-bg: rgba(224, 182, 74, 0.14);
+    --status-completed-ink: var(--accent);
+    --status-completed-bg: color-mix(in srgb, var(--accent) 16%, transparent);
+    --status-archived-ink: #9aa4ab;
+    --status-archived-bg: rgba(255, 255, 255, 0.06);
   }
   html {
     color-scheme: dark;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise-in {
+  animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-rise-in-delay {
+  animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise-in,
+  .animate-rise-in-delay {
+    animation: none;
+  }
+}
+
+.hero-surface {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.hero-glow-a,
+.hero-glow-b {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.hero-glow-a {
+  top: -260px;
+  left: -200px;
+  width: 760px;
+  height: 760px;
+  background: radial-gradient(circle, var(--glow-strong) 0%, transparent 68%);
+}
+
+.hero-glow-b {
+  bottom: -320px;
+  right: -260px;
+  width: 680px;
+  height: 680px;
+  background: radial-gradient(circle, var(--glow-soft) 0%, transparent 70%);
+}
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, var(--bg)) 100%);
+  box-shadow: var(--logo-shadow);
+}
+
+/* Layout/shape only — background & text color come from the tier-specific
+   Tailwind classes in getAvailabilityBadge() (see app/lib/availability.ts),
+   so this intentionally does not set background-color. */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font-weight: 500;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  box-shadow: var(--card-shadow-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+  .project-card:hover,
+  .project-card:focus-within {
+    transform: none;
   }
 }
 

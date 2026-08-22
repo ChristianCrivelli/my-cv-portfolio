@@ -1,7 +1,13 @@
 import './global.css'
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
+import { Space_Grotesk } from 'next/font/google'
 import { GeistMono } from 'geist/font/mono'
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-space-grotesk',
+})
 import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -68,8 +74,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
-        GeistSans.variable,
+        'bg-[var(--bg)] text-[var(--ink)]',
+        spaceGrotesk.className,
+        spaceGrotesk.variable,
         GeistMono.variable
       )}
     >
