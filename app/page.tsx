@@ -21,7 +21,7 @@ export default function Page() {
         <div className="hero-glow-a" />
         <div className="hero-glow-b" />
         <div className="hero-grain" />
-        <div className="relative grid gap-10 sm:grid-cols-[220px_minmax(0,1fr)] sm:items-start sm:gap-14">
+        <div className="relative grid gap-10 sm:grid-cols-[320px_minmax(0,1fr)] sm:items-start sm:gap-14">
           <div className="animate-rise-in">
             <div className="logo-mark mb-5" />
             <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
